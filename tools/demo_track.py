@@ -4,6 +4,7 @@ import os.path as osp
 import time
 import cv2
 import torch
+import pickle
 
 from loguru import logger
 
@@ -249,6 +250,8 @@ def imageflow_demo(predictor, vis_folder, current_time, args):
     vid_writer = cv2.VideoWriter(
         save_path, cv2.VideoWriter_fourcc(*"mp4v"), fps, (int(width), int(height))
     )
+    with open('/home/manu/tmp/args_tracker.pickle', 'wb') as f:
+        pickle.dump(args, f)
     tracker = BYTETracker(args, frame_rate=30)
     timer = Timer()
     frame_id = 0

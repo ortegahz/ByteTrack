@@ -1,0 +1,6 @@
+# install
+pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+pip install numpy==1.23.5
+
+# demo
+python3 tools/demo_track.py video -f exps/example/mot/yolox_x_mix_det.py -c /media/manu/data/models/bytetrack_x_mot17.pth.tar --fp16 --fuse --save_result
